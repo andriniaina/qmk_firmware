@@ -9,7 +9,6 @@
     "rgb_matrix": {
         "driver": "CKLED2001",
         "animations": {
-            "alpha_mods": true,
             "cycle_out_in_dual": true,
             "jellybean_raindrops": true,
             "pixel_rain": true,
