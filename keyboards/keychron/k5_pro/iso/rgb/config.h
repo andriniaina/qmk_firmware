@@ -16,6 +16,8 @@
 
 #pragma once
 
+#define TAPPING_TOGGLE 4
+
 #ifdef RGB_MATRIX_ENABLE
 /* RGB Matrix Driver Configuration */
 #    define DRIVER_COUNT 2
