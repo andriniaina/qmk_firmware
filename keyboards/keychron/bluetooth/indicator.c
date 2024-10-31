@@ -477,6 +477,13 @@ void indicator_task(void) {
 
 #if defined(LED_MATRIX_ENABLE) || defined(RGB_MATRIX_ENABLE)
 __attribute__((weak)) void os_state_indicate(void) {
+
+    if(IS_LAYER_ON(4/*WIN_FN_LOCKED*/)) {
+        SET_LED_ON(FN_INDEX);
+        for(int i=0; i<12; ++i) {
+            SET_LED_ON(i+1);
+        }
+    }
 #    if defined(NUM_LOCK_INDEX)
     if (host_keyboard_led_state().num_lock) {
         SET_LED_ON(NUM_LOCK_INDEX);
