@@ -40,6 +40,7 @@
 
 /* Indication led */
 #    define NUM_LOCK_INDEX 37    // NumLock
+#    define CAPS_LOCK_INDEX 61
 #    define LOW_BAT_IND_INDEX 99 // Space
 
 /* RGB Matrix Animation modes. Explicitly enabled
