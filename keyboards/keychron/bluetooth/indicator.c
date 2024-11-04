@@ -479,9 +479,11 @@ void indicator_task(void) {
 __attribute__((weak)) void os_state_indicate(void) {
 
     if(IS_LAYER_ON(4/*WIN_FN_LOCKED*/)) {
-        SET_LED_ON(FN_INDEX);
+        HSV hsv = rgb_matrix_get_hsv();
+        hsv.h = qadd8(50, hsv.h);
+        rgb_matrix_set_color(FN_INDEX, hsv.h, hsv.s, hsv.v);
         for(int i=0; i<12; ++i) {
-            SET_LED_ON(i+1);
+            rgb_matrix_set_color(i+1, hsv.h, hsv.s, hsv.v);
         }
     }
 #    if defined(NUM_LOCK_INDEX)
