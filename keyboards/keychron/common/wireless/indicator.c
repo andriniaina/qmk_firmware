@@ -605,6 +605,13 @@ void indicator_task(void) {
 
 #if defined(LED_MATRIX_ENABLE) || defined(RGB_MATRIX_ENABLE)
 __attribute__((weak)) void os_state_indicate(void) {
+        if(IS_LAYER_ON(4/*WIN_FN_LOCKED*/)) {
+        SET_LED_ON(FN_INDEX);
+        for(int i=0; i<12; ++i) {
+            SET_LED_ON(i+1);
+        }
+    }
+    
 #    if defined(RGB_DISABLE_WHEN_USB_SUSPENDED) || defined(LED_DISABLE_WHEN_USB_SUSPENDED)
     if (get_transport() == TRANSPORT_USB && USB_DRIVER.state == USB_SUSPENDED) return;
 #    endif

@@ -16,6 +16,8 @@
 
 #pragma once
 
+#define TAPPING_TOGGLE 4
+
 #ifdef RGB_MATRIX_ENABLE
 /* RGB Matrix driver configuration */
 #    define DRIVER_COUNT 2
@@ -45,6 +47,7 @@
 /* Indications */
 #    define NUM_LOCK_INDEX 37
 #    define CAPS_LOCK_INDEX 61
+#    define FN_INDEX 101
 #    define LOW_BAT_IND_INDEX \
         { 98 }
 
